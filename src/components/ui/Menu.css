@@ -1,0 +1,216 @@
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  color: white;
+}
+
+.menu-content {
+  background-color: rgba(20, 30, 50, 0.8);
+  border: 2px solid rgba(0, 200, 255, 0.5);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Game title styles */
+.game-title, .pause-title, .game-over-title {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
+  background: linear-gradient(to bottom, #ffffff, #00a8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.game-over-title {
+  color: #ff3030;
+  background: linear-gradient(to bottom, #ffffff, #ff3030);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.game-subtitle {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button styles */
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.menu-button {
+  background-color: rgba(0, 100, 200, 0.3);
+  color: white;
+  border: 2px solid rgba(0, 200, 255, 0.5);
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-button:hover {
+  background-color: rgba(0, 150, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 150, 255, 0.3);
+}
+
+.menu-button:active {
+  transform: translateY(1px);
+}
+
+.start-button, .resume-button {
+  background-color: rgba(0, 150, 50, 0.3);
+  border-color: rgba(0, 255, 100, 0.5);
+}
+
+.start-button:hover, .resume-button:hover {
+  background-color: rgba(0, 200, 100, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 200, 100, 0.3);
+}
+
+/* Controls list */
+.controls-container {
+  margin: 20px 0;
+}
+
+.controls-list, .controls-list-small {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.controls-list li, .controls-list-small li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls-list-small {
+  font-size: 0.9rem;
+}
+
+.controls-list-small li {
+  margin: 5px 0;
+}
+
+.key {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: monospace;
+  font-size: 0.9rem;
+  min-width: 20px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Game description */
+.game-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+/* Stats display for game over */
+.stats-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-label {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00a8ff;
+}
+
+/* Version info */
+.version-info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+/* Controls reminder in pause menu */
+.controls-reminder {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.controls-reminder h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .menu-content {
+    padding: 20px;
+    width: 95%;
+  }
+  
+  .game-title, .pause-title, .game-over-title {
+    font-size: 2rem;
+  }
+  
+  .game-subtitle {
+    font-size: 0.9rem;
+  }
+} 
